@@ -1,6 +1,7 @@
     #include <iostream>
     #include <cstdlib>
 	#include <math.h>
+	#include <cstring>
 
 
 
@@ -13,6 +14,7 @@
     void liberar_Memoria_frase(char* frase);
     void CreandoMatriz (char** m);
     void liberar_Memoria(char** m);
+    void ejercicio2(char** frases,char abecedario[]);
 
     int main(int argc, char const *argv[]){
     	
@@ -51,9 +53,21 @@
     			int contador2=0;
     			char** frases = new char*[100];
     			CreandoMatriz (frases);
+    			char abecedario[] ={'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     			while(opcion2==1){
+    				//cin.ignore();
+    				//cout << "entro" << endl;
     				cout<<"ingrese una frase"<<endl;
+    				//cout << "salgo" << endl;
     				cin.getline(frases[contador2],100);
+    				cout << "hago" << endl;
+    				//cout << contador2 <<frases[contador2] << endl;
+    				for(int i =0;i<3;i++){
+    					for(int j=0;j<3;j++){
+    					cout <<frases[i][j];
+    					}
+    					cout <<endl;
+    				}
     				
 
     				cout<<"desea continuar [si=1/no=2]"<<endl;
@@ -63,6 +77,7 @@
 
     				contador2++;
     			}
+    			ejercicio2(frases,abecedario);
 
 
     			liberar_Memoria(frases);
@@ -129,6 +144,8 @@
 
 
 
+
+
 	}
 
 	void liberar_Memoria(char** m){
@@ -143,7 +160,73 @@
 
 	}
 
-	void ejercicio2(char** frases){
+	void ejercicio2(char** frases,char abecedario[]){
+		int fila=0;
+		for(int i =0;i<100;i++){
+			if(frases[i][0] == '\0'){
+				fila=i;
+				break;
+			}
+		}
+		cout<<fila<<endl;
+
+		for(int i =0;i<fila;i++){
+			//abecedario={'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+			char abecedario2[27];
+			strcpy(abecedario2,abecedario);
+			int contador=0;
+			for(int j =0;j<100;j++){
+				if(frases[i][j] == '\0'){
+					contador=j;
+					break;
+				}
+			}
+			int palabras=1;
+			for(int j =0; j < contador;j++){
+				if(frases[i][j]==' '){
+					palabras++;
+				}
+
+			}
+
+
+    	for(int j =0 ; j <contador ;j++){
+ 			for(int k = 0 ;k<27;k++){
+ 				if(frases[i][j]==abecedario[k]){
+ 					abecedario[k]='0';
+
+ 				}
+
+ 			}
+
+    	}
+
+
+
+
+			int letras = 26;
+
+			for(int j =0 ; j <27 ;j++){
+    			if(abecedario[j]=='0'){
+    				letras--;
+    			}
+
+    		}
+
+
+
+			cout<< "letras restantes que no se utilizaron en el abecedario es igual "<<letras<<endl;
+			cout<<"palabras en la oracion "<<i<< " es igual a "<<palabras<<endl;	
+		}
+
+
+
+
+
+
+	}
+
+	void ejercicio1(){
 
 
 	}
