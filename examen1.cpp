@@ -201,13 +201,13 @@
 				}
 
 			}
-
+		int letras2 =0;
 
     	for(int j =0 ; j <contador ;j++){
  			for(int k = 0 ;k<27;k++){
  				if(frases[i][j]==abecedario[k]){
  					abecedario[k]='0';
-
+ 					letras2++;
  				}
 
  			}
@@ -218,10 +218,13 @@
 
 
 			int letras = 26;
+			
 
 			for(int j =0 ; j <27 ;j++){
     			if(abecedario[j]=='0'){
     				letras--;
+    				
+
     			}
 
     		}
@@ -229,6 +232,7 @@
 
 
 			cout<< "letras restantes que no se utilizaron en el abecedario es igual "<<letras<<endl;
+			cout<< "letras que tiene la oracion "<<letras2 <<endl;
 			cout<<"palabras en la oracion "<<i<< " es igual a "<<palabras<<endl;	
 		}
 
