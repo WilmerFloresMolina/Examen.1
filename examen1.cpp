@@ -2,6 +2,7 @@
     #include <cstdlib>
 	#include <math.h>
 	#include <cstring>
+	#include <string>
 
 
 
@@ -15,6 +16,7 @@
     void CreandoMatriz (char** m);
     void liberar_Memoria(char** m);
     void ejercicio2(char** frases,char abecedario[]);
+    void ejercicio3(string oracion);
 
     int main(int argc, char const *argv[]){
     	
@@ -81,6 +83,17 @@
 
 
     			liberar_Memoria(frases);
+
+    		}
+    		if(opcion==3){
+    			string oracion="";
+    			cout<<"ingrese en clave morse"<<endl;
+    			cin >>oracion;
+    			oracion = oracion+"&";
+    			//cin.getline((char*)oracion.c_str(), 256);
+    			//cout<<oracion<<endl;
+    			cout << "La palabara es "<<endl;
+    			ejercicio3(oracion);
 
     		}
 
@@ -226,7 +239,129 @@
 
 	}
 
-	void ejercicio1(){
+	void ejercicio3(string oracion){
+		string letra ="";
+		for(int i=0 ; i<oracion.size();i++) {
+			if (oracion[i] != '&' ){
+				letra=letra + oracion[i];
+
+			}else{
+				
+				if(".-"==letra){
+					cout<<"a";
+
+				}
+				if("-..."==letra){
+					cout<<"b";
+
+				}
+				if("-.-."==letra){
+					cout<<"c";
+
+				}
+				if("-.."==letra){
+					cout<<"d";
+
+				}
+				if("."==letra){
+					cout<<"e";
+
+				}
+				if("..-."==letra){
+					cout<<"f";
+
+				}
+				if("--."==letra){
+					cout<<"g";
+
+				}
+				if("...."==letra){
+					cout<<"h";
+
+				}
+				if(".."==letra){
+					cout<<"i";
+
+				}
+				if(".---"==letra){
+					cout<<"j";
+
+				}
+				if("-.-"==letra){
+					cout<<"k";
+
+				}
+				if(".-.."==letra){
+					cout<<"l";
+
+				}
+				if("--"==letra){
+					cout<<"m";
+
+				}
+				if("-."==letra){
+					cout<<"n";
+
+				}
+				if("---"==letra){
+					cout<<"o";
+
+				}
+				if(".--."==letra){
+					cout<<"p";
+
+				}
+				if("--.-"==letra){
+					cout<<"q";
+
+				}
+				if(".-."==letra){
+					cout<<"r";
+
+				}
+				if("..."==letra){
+					cout<<"s";
+
+				}
+				if("-"==letra){
+					cout<<"t";
+
+				}
+				if("..-"==letra){
+					cout<<"u";
+
+				}
+				if("...-"==letra){
+					cout<<"v";
+
+				}
+				if(".--"==letra){
+					cout<<"w";
+
+				}
+				if("-..-"==letra){
+					cout<<"x";
+
+				}
+				if("-.--"==letra){
+					cout<<"y";
+
+				}
+				if("--.."==letra){
+					cout<<"z";
+
+				}
+
+
+
+
+				letra="";
+			}
+
+
+		}
+		cout<<endl;
+
 
     /// llsad
 	}
